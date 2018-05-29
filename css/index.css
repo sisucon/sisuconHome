@@ -1,0 +1,87 @@
+#page1
+{
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1)),url("../img/page1.jpg");
+    background-size: 100%,100%;
+    background-repeat:no-repeat;
+}
+#page2
+{
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,1)),url("../img/page2.png");
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+}
+#title1
+{
+    position: absolute;
+    top:15%;
+    left:5%;
+    color: white;
+}
+#title2
+{ user-select: none;
+    position: absolute;
+    top:115%;
+    left:3%;
+    color: white;
+}
+#title2 h1
+{
+    font-size: 8em;
+    font-weight:800;
+    text-align: center;
+}
+#title1 h1
+{ user-select: none;
+    font-size: 8em;
+    font-weight:800;
+    text-align: center;
+}
+#title1 p
+{ user-select: none;
+    font-size: 2em;
+    font-family: 隶书;
+}
+#AGE
+{ user-select: none;
+    font-size: 40px;
+    position: relative;
+}
+#birthDay
+{ user-select: none;
+    position: relative;
+    font-size: 35px;
+    font-weight:800;
+    text-align: center;
+}
+#metro {
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    padding-top: 10%;
+}
+h4 { user-select: none;
+    font-size: 2em;
+    font-weight: 600;
+    color: whitesmoke;
+}
+.linkblock p {
+    user-select: none;
+    font-size: 1.5em;
+    color: whitesmoke;
+}
+
+.linkblock {
+    user-select: none;
+    padding: 1em;
+    height: 12em;
+    width: 12em;
+    box-shadow: whitesmoke 4px 3px 2px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.linkblock:hover {
+    box-shadow: wheat 6px 5px 4px;
+}
