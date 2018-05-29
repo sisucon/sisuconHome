@@ -5,7 +5,7 @@
  * Created by sisucon on 2017/11/19.
  */
 var index = 1;
-var sum = 27;
+var sum = 36;
 var count = 0;
 var text = 0;
 var searchArr;
@@ -30,7 +30,8 @@ $(document).ready(function () {
     imglist =  $(".imglist");
     icon_l = $("#icon_left");
     icon_r = $("#icon_right");
-    height = imglist.height();
+    width = imglist.width();
+    console.log(width.toString());
     text = 1;
     showT = function () {
         $(".imglist>li").css('top','-620px');
@@ -40,20 +41,7 @@ $(document).ready(function () {
         $(".imglist>li").css('top','-1940px');
         changePic();
     }
-    getText = function () {
-        htmlobj = $.ajax({
-            url:"./aliText/"+text+".txt",
-            async:false,
-        });
-        str = htmlobj.responseText;
-        allstr = str.split("\n");
-        $("#imgTitle").html(allstr[0]);
-        $(".imgtext").html(allstr[1]);
-    }
-    getText();
     changePic = function () {
-        text = ((sum*sum+index-1)%sum+1);
-        getText();
         $($(".imglist li img")[0]).attr('src',"./img/ss/"+((sum*sum+index-3)%sum+1)+".jpg");
         $($(".imglist li img")[1]).attr('src',"./img/ss/"+((sum*sum+index-2)%sum+1)+".jpg");
         $($(".imglist li img")[2]).attr('src',"./img/ss/"+((sum*sum+index-1)%sum+1)+".jpg");
@@ -71,13 +59,13 @@ $(document).ready(function () {
         {
             index++;
             var now = parseInt($(".imglist>li").css('top'));
-            $(".imglist>li").animate({top:'-1280px'},'slow',showT());
+            $(".imglist>li").animate({top:'-1300px'},'slow',showT());
         }
         else
         {
             index--;
             var now = parseInt($(".imglist>li").css('top'));
-            $(".imglist>li").animate({top:'-1280px'},'slow',showB());
+            $(".imglist>li").animate({top:'-1300px'},'slow',showB());
         }
     })
 
@@ -88,7 +76,8 @@ $(document).ready(function () {
         icon_r.css('opacity','1');
     })
     imglist.mousemove(function () {
-        if(window.event.offsetY<height/2)
+        console.log(window.event.offsetX+" : "+window.event.offsetY+" width:"+width);
+        if(window.event.offsetX<width/2)
         {
             action = 'top';
             icon_l.css('opacity','1');
@@ -107,19 +96,7 @@ $(document).ready(function () {
         icon_r.css('opacity','0.1');
     })
 
-    cb = $("#cb");
-    bgmPlay = true;
-    cb.mouseup( function () {
-        if(!bgmPlay)
-        {
-            $("#bgMusic")[0].pause();
-        }
-        else
-        {
-            $("#bgMusic")[0].play();
-        }
-        bgmPlay = !bgmPlay;
-    })
+
 })
 
 

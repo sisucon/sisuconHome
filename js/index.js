@@ -42,6 +42,9 @@ $(document).ready(function() {
            },100)
        }
    }
+    $("#m1").onclick(function () {
+        
+    })
    GetBirthDay = function () {
     var nowDate = new Date();
     var myBirthDay = new Date();
